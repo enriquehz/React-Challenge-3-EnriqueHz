@@ -8,11 +8,13 @@ export default function App() {
   // console.log(pokemons);
   let pokeList = [];
   //const result = words.filter(word => word.length > 6);
-  const matchPokemon = pokemons.filter((pokemon) => pokemon.name === name);
-  matchPokemon.forEach((item) => {
+  //let matchPokemon = pokeList.filter((pokemon) => pokemon.name === name);
+  pokemons.forEach((item) => {
     pokeList.push(<CardItem name={item.name} sprite={item.sprite} />);
   });
-  //console.log(name)
+  console.log(pokeList);
+  let filterPokeList = pokeList.filter((pokemon) => pokemon.props.name.includes(name));
+  //console.log(name)words.filter(word => word.length > 6);
   //console.log(matchPokemon);
   //console.log(pokeList);
   return (
@@ -32,7 +34,8 @@ export default function App() {
      <button> Insert Pokemon</button>
       */}
 
-      <div className="cards">{pokeList}</div>
+      <div className="cards">{filterPokeList}</div>
     </div>
   );
 }
+
