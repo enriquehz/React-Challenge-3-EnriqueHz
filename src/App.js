@@ -10,9 +10,9 @@ export default function App() {
   //const result = words.filter(word => word.length > 6);
   //let matchPokemon = pokeList.filter((pokemon) => pokemon.name === name);
   pokemons.forEach((item) => {
-    pokeList.push(<CardItem name={item.name} sprite={item.sprite} />);
+    pokeList.push(<CardItem key={item.name} name={item.name} sprite={item.sprite} />);
   });
-  console.log(pokeList);
+  //console.log(pokeList);
   let filterPokeList = pokeList.filter((pokemon) => pokemon.props.name.includes(name));
   //console.log(name)words.filter(word => word.length > 6);
   //console.log(matchPokemon);
